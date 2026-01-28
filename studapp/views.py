@@ -11,3 +11,10 @@ class Student_api(APIView):
         serializer_data=serializer.student_serializer(items,many=True)
         return Response(serializer_data.data,status.HTTP_200_OK,)
     
+    def post(self,request):
+        python_obj=serializer.student_serializer(data=request.data)
+        if python_obj.is_valid():
+            python_obj.save()
+            return Response("Data saved succesfully...?",status.HTTP_201_CREATED)
+        return Response("invalid data.....!",status.HTTP_400_BAD_REQUEST)
+    

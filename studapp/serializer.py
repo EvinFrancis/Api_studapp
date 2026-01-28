@@ -3,9 +3,9 @@ from studapp.models import Studentdb
 
 class student_serializer(serializers.ModelSerializer):
     class Meta:
-        models=Studentdb
-        field=(
-            "studId",
+        model=Studentdb
+        fields=(
+            
             "Name",
             "place",
             "course",

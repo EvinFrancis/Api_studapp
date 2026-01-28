@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from studapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Student_api/', views.Student_api.as_view()),
 ]
